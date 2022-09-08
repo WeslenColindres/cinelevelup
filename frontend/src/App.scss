@@ -1,0 +1,112 @@
+@use "./style/scss/" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 100%;
+
+    @include tablet {
+        font-size: 80%;
+    }
+
+    @include mobile {
+        font-size: 60%;
+    }
+}
+
+body {
+    font-family: $font-family;
+    font-weight: 400;
+    line-height: 1.5;
+
+    background-color: $body-bg;
+    color: $txt-color;
+
+    @include mobile {
+        margin-bottom: 3rem;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+@media (hover: hover) {
+    a:hover {
+        color: $main-color;
+    }
+}
+
+.link-a{
+    margin-top: 10rem;
+}
+
+button,
+input {
+    outline: 0;
+}
+
+.container_center{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+iframe {
+    border: 0;
+}
+
+.container {
+    max-width: 1660px;
+    margin: auto;
+}
+
+.h-2{
+    margin-top: 10rem;
+}
+
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.section {
+    padding: 0 2rem;
+}
+
+.section__header {
+    @include flex(center, space-between);
+}
+
+.margin-top {
+    margin-top: 10rem;
+}

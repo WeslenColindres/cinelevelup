@@ -1,0 +1,23 @@
+{
+  "name": "api-proyectofinal-levelup",
+  "version": "1.0.0",
+  "description": "api proyecto final levelup",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js",
+    "test": "esta es una api creada para el proyecto final de level up"
+  },
+  "author": "weslen colindres",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.5",
+    "uuid": "^8.3.2"
+  }
+}
