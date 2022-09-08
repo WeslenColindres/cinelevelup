@@ -10,7 +10,7 @@ const MovieSchema = new Schema({
   working_hours: [
     {
         hour: {
-            type: Date,
+            type: String,
         }
     }
   ]
