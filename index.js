@@ -1,9 +1,9 @@
 
 const mongoose = require( 'mongoose' );
 
-const mongodbConfig = require( './mongodbConfig' );
+const mongodbConfig = require( './src/mongodbConfig' );
 
-const app = require( './app' );
+const app = require( './src/app' );
 
 mongoose.connect(mongodbConfig.db, { useNewUrlParser: true }, ( err, res ) => {
     if(err) {
