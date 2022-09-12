@@ -17,18 +17,22 @@ const getAllUser = async (req, res) => {
 
 
 const getOneUser = async (req, res) => {
-    if (!req.params.userId) {
+    if (!req.query.email) {
         res
             .status(400)
             .send({
                 status: "FAILED",
                 data: {
-                    error: "error en los parametros de id resividos",
+                    error: "error en los parametros de email resividos",
                 }
             })
     }
     try {
-        const user = await User.findById(req.params.userId);
+        let email = req.query.email
+        console.log(email);
+        let password = req.query.password
+        console.log(password);
+        const user = await User.find({ email: email, password: password });
         if (!user) {
             res.status(404).json({
                 message: "This user does not exist!"
@@ -113,7 +117,7 @@ const deleteOneUser = async (req, res) => {
                     error: "el parametro id esta vacio"
                 }
             });
-            return;
+        return;
     }
     try {
         await User.findOneAndDelete({

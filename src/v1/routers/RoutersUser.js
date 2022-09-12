@@ -9,7 +9,7 @@ const userController = require( '../../controllers/ControllerUser' )
 
 router
     .get('/', userController.getAllUser)
-    .get('/:userId', userController.getOneUser)
+    .get('/login', userController.getOneUser)
     .post('/', userController.createNewUser)
     .put('/:userId', userController.updateOneUser)
     .delete('/:userId', userController.deleteOneUser);
