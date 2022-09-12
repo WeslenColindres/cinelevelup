@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router';
+
+import ContextCinemaHallManager from '../../component/contextFuncion/contectCinemaHallManager/Manager';
 
 import tmdbApi from '../../component/appRequests/axioRequests/tmdbApi/tmdbApi';
 import apiConfig from '../../component/appRequests/apiConfig/tmdbApi/apiConfig';
@@ -13,6 +15,9 @@ import { Link } from 'react-router-dom';
 
 const DescriptionMovie = () => {
 
+    const { setNameMovie } = useContext(ContextCinemaHallManager);
+
+
     const { category, id } = useParams();
 
     const [item, setItem] = useState(null);
@@ -24,8 +29,15 @@ const DescriptionMovie = () => {
             window.scrollTo(0,0);
         }
         getDetail();
+        
     }, [category, id]);
 
+    useEffect(() => {
+        if(!item){
+            return;
+        }
+        setNameMovie(item.title)
+    }, [item]);
     return (
         <>
             {

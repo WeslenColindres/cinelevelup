@@ -6,8 +6,22 @@ const ContextCinemaHallManager = React.createContext();
 
 const Manager = ({ children }) => {
   const [seatRequestDataStore, setSeatRequestDataStore] = React.useState(seatDB);
-  const [ticketAmountManagement, setTicketAmountManagement] = React.useState(4);
+  const [ticketAmountManagement, setTicketAmountManagement] = React.useState(0);
   const [centQuantityController, setCentQuantityController] = React.useState([]);
+  const [conuntTotal, setConuntTotal] = React.useState(0);
+  const [nameMovie, setNameMovie] = React.useState("");
+  const [nameCinema, setNameCinema] = React.useState("");
+
+
+
+  const tickettotal = (price, status) => {
+    if(status) {
+      setConuntTotal(conuntTotal + (price))
+    }else {
+      setConuntTotal(conuntTotal - (price) )
+    }
+    
+  }
 
   const handleRowSeatSelection = (selectionInformation, seatCode) => {
 
@@ -27,10 +41,18 @@ const Manager = ({ children }) => {
     seatRequestDataStore,
     ticketAmountManagement,
     centQuantityController,
+    conuntTotal,
+    nameMovie,
+    nameCinema,
     setSeatRequestDataStore,
     setTicketAmountManagement,
     setCentQuantityController,
     handleRowSeatSelection,
+    setConuntTotal,
+    tickettotal,
+    setNameMovie,
+    setNameCinema,
+
   };
 
   return (

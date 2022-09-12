@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 
 import Button from '../button/Button';
 
+import { RiPlayCircleLine } from 'react-icons/ri';
+
 import { category } from '../../component/appRequests/axioRequests/tmdbApi/tmdbApi';
 import apiConfig from '../../component/appRequests/apiConfig/tmdbApi/apiConfig';
 
@@ -21,7 +23,7 @@ const MovieCard = props => {
         <Link to={link}>
             <div className="movie-card" style={{backgroundImage: `url(${bg})`}}>
                 <Button>
-                    <i className="bx bx-play">ce</i>
+                    <i><RiPlayCircleLine  size='30' /></i>
                 </Button>
             </div>
             <h3>{item.title || item.name}</h3>

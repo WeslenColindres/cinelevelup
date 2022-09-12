@@ -18,34 +18,41 @@ import DescriptionMovie from './pages/descriptionMovie/DescriptionMovie';
 import Register from './component/userAccess/userRegistration/Register';
 import MenuTabs from './component/menuTabs/MenuTabs';
 
+import { Manager } from './component/contextFuncion/contectCinemaHallManager/Manager';
+import { Api } from './component/contextFuncion/contectCinemaHallManager/contextApi/Api';
+
 
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Header />
+    <Api>
+    <Manager >
+      <BrowserRouter>
+        <Header />
 
 
-      <Routes>
-        <Route path='/' index element={<Home />} />
+        <Routes>
+          <Route path='/' index element={<Home />} />
 
 
-        <Route path='/:category' element={<Billboard />} />
-        <Route path='/:category/:id' element={<DescriptionMovie />} />
-        <Route path='/campra' element={<MenuTabs />} />
+          <Route path='/:category' element={<Billboard />} />
+          <Route path='/:category/:id' element={<DescriptionMovie />} />
+          <Route path='/campra' element={<MenuTabs />} />
 
 
-        <Route path='/About' element={<About />} />
+          <Route path='/About' element={<About />} />
 
 
-        <Route path='/Login' element={<Login />} />
-        <Route path='/Registration' element={<Register />} />
-      </Routes> 
+          <Route path='/Login' element={<Login />} />
+          <Route path='/Registration' element={<Register />} />
+        </Routes>
 
-      
-      <Footer />
- 
-    </BrowserRouter>
+
+        <Footer />
+
+      </BrowserRouter>
+    </Manager>
+    </Api>
 
   )
 }

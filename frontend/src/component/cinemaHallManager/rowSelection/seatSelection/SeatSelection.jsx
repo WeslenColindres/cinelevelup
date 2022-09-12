@@ -14,6 +14,8 @@ const SeatSelection = ({ seat, handleColorSeatSelection }) => {
                 setCentQuantityController([...centQuantityController, codigo])
                 color = "red";
                
+            } else if (color === '#808080'){
+                
             } else {
                 color = "blue";
                 setCentQuantityController(centQuantityController.filter((el) => el !== codigo))

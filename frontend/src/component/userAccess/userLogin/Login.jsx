@@ -57,7 +57,7 @@ const Login = () => {
         </div>
         <div className="container">
           <div className="section mb-3">
-          <Link to='/Registration'> holasdasdasdas </Link>
+          <Link to='/Registration'> Sing Up </Link>
           </div>
         </div>
       </div>

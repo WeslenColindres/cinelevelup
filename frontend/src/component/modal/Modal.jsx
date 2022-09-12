@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import { RiCloseFill } from 'react-icons/ri';
 
 import './modal.scss';
 
@@ -36,7 +37,7 @@ export const ModalContent = props => {
         <div ref={contentRef} className="modal__content">
             {props.children}
             <div className="modal__content__close" onClick={closeModal}>
-                <i className="bx bx-x">cerrar</i>
+                <i><RiCloseFill size='25'  /></i>
             </div>
         </div>
     )

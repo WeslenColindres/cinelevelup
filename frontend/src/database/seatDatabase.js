@@ -20,16 +20,16 @@ const seatDB = [
       codigo: "2",
       B:
         [
-          { codigo: 'B1', color: 'blue', seleccionado: 1 },
-          { codigo: 'B2', color: 'blue', seleccionado: 1 },
-          { codigo: 'B3', color: 'blue', seleccionado: 1 },
-          { codigo: 'B4', color: 'blue', seleccionado: 1 },
-          { codigo: 'B5', color: 'blue', seleccionado: 1 },
-          { codigo: 'B6', color: 'blue', seleccionado: 1 },
-          { codigo: 'B7', color: 'blue', seleccionado: 1 },
-          { codigo: 'B8', color: 'blue', seleccionado: 1 },
-          { codigo: 'B9', color: 'blue', seleccionado: 1 },
-          { codigo: 'B10', color: 'blue', seleccionado: 1 }
+          { codigo: 'B1', color: '#808080', seleccionado: 1 },
+          { codigo: 'B2', color: '#808080', seleccionado: 1 },
+          { codigo: 'B3', color: '#808080', seleccionado: 1 },
+          { codigo: 'B4', color: '#808080', seleccionado: 1 },
+          { codigo: 'B5', color: '#808080', seleccionado: 1 },
+          { codigo: 'B6', color: '#808080', seleccionado: 1 },
+          { codigo: 'B7', color: '#808080', seleccionado: 1 },
+          { codigo: 'B8', color: '#808080', seleccionado: 1 },
+          { codigo: 'B9', color: '#808080', seleccionado: 1 },
+          { codigo: 'B10', color: '#808080', seleccionado: 1 }
         ]
     },
     {
@@ -52,16 +52,16 @@ const seatDB = [
       codigo: "4",
       D:
         [
-          { codigo: 'D1', color: 'blue', seleccionado: 1 },
-          { codigo: 'D2', color: 'blue', seleccionado: 1 },
-          { codigo: 'D3', color: 'blue', seleccionado: 1 },
-          { codigo: 'D4', color: 'blue', seleccionado: 1 },
-          { codigo: 'D5', color: 'blue', seleccionado: 1 },
-          { codigo: 'D6', color: 'blue', seleccionado: 1 },
-          { codigo: 'D7', color: 'blue', seleccionado: 1 },
-          { codigo: 'D8', color: 'blue', seleccionado: 1 },
-          { codigo: 'D9', color: 'blue', seleccionado: 1 },
-          { codigo: 'D10', color: 'blue', seleccionado: 1 }
+          { codigo: 'D1', color: '#808080', seleccionado: 1 },
+          { codigo: 'D2', color: '#808080', seleccionado: 1 },
+          { codigo: 'D3', color: '#808080', seleccionado: 1 },
+          { codigo: 'D4', color: '#808080', seleccionado: 1 },
+          { codigo: 'D5', color: '#808080', seleccionado: 1 },
+          { codigo: 'D6', color: '#808080', seleccionado: 1 },
+          { codigo: 'D7', color: '#808080', seleccionado: 1 },
+          { codigo: 'D8', color: '#808080', seleccionado: 1 },
+          { codigo: 'D9', color: '#808080', seleccionado: 1 },
+          { codigo: 'D10', color: '#808080', seleccionado: 1 }
         ]
     },
     {

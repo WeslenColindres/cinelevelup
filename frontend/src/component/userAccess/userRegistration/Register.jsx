@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 
 
 
+
 const Register = () => {
   return (
     <>
@@ -80,7 +81,7 @@ const Register = () => {
       </div>
       <div className="container">
         <div className="section mb-3">
-          <Link to='/Login'> holasdasdasdas </Link>
+          <Link to='/Login'> Sign In </Link>
         </div>
       </div>
       </div>
