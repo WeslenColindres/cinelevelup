@@ -28,7 +28,7 @@ const getOneUser = async (req, res) => {
             })
     }
     try {
-        const {  password, user_name }  = req.query
+        let {  password, user_name }  = req.query;
         const user = await User.find({ user_name: user_name, password: password });
         if (!user) {
             res.status(404).json({
