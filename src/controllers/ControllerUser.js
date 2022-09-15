@@ -30,7 +30,7 @@ const getOneUser = async (req, res) => {
     try {
         const { email, password, user_name }  = req.query
         console.log(password);
-        const user = await User.find({ user_name:user_name, email: email, password: password });
+        const user = await User.find({ user_name:user_name, password: password });
         if (!user) {
             res.status(404).json({
                 message: "This user does not exist!"
