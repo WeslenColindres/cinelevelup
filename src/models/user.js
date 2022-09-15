@@ -18,6 +18,12 @@ const UserSchema = new Schema({
         trim: true,
         required: true
     },
+    user_name: {
+        type: String,
+        unique: true,
+        trim: true,
+        required: true
+    },
     email: {
         type: String,
         unique: true,

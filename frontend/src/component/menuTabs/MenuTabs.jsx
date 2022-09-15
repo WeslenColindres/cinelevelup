@@ -1,8 +1,12 @@
 import * as React from 'react'
 import "./MenuTabs.scss";
+
 import { OutlineButton } from '../button/Button';
+
 import CinamaHallManager from '../cinemaHallManager/CinamaHallManager';
+
 import ContextCinemaHallManager from '../contextFuncion/contectCinemaHallManager/Manager';
+
 import SelectNumberTickets from '../selectNumberTickets/SelectNumberTickets';
 
 
@@ -107,7 +111,7 @@ const MenuTabs = () => {
                     className={toggleState === 3 ? "content  active-content" : "content"}
                 >
                     <div className="container_center">
-                        <h2>Content 3</h2>
+                        <h2>Porfavor seleccione metodo de pago</h2>
                         <hr />
                         <div>
                             <OutlineButton onClick={() => toggleTab(2)}>atras</OutlineButton>
@@ -120,7 +124,7 @@ const MenuTabs = () => {
                 className={toggleState === 4 ? "content  active-content" : "content"}
             >
                 <div className="container_center">
-                    <h2>Content 3</h2>
+                    <h2>Confirmar Pago</h2>
                     <hr />
                     <div>
                         <OutlineButton onClick={() => toggleTab(3)}>atras</OutlineButton>

@@ -23,36 +23,39 @@ import { Api } from './component/contextFuncion/contectCinemaHallManager/context
 
 
 
+
 const App = () => {
   return (
-    <Api>
     <Manager >
-      <BrowserRouter>
-        <Header />
+      <Api>
+        <BrowserRouter>
+
+          <Header />
 
 
-        <Routes>
-          <Route path='/' index element={<Home />} />
+          <Routes>
+            <Route path='/' index element={<Home />} />
 
 
-          <Route path='/:category' element={<Billboard />} />
-          <Route path='/:category/:id' element={<DescriptionMovie />} />
-          <Route path='/campra' element={<MenuTabs />} />
+            <Route path='/:category' element={<Billboard />} />
+            <Route path='/:category/:id' element={<DescriptionMovie />} />
+            <Route path='/campra' element={<MenuTabs />} />
 
 
-          <Route path='/About' element={<About />} />
+            <Route path='/About' element={<About />} />
 
 
-          <Route path='/Login' element={<Login />} />
-          <Route path='/Registration' element={<Register />} />
-        </Routes>
+            <Route path='/Login' element={<Login />} />
+            <Route path='/Registration' element={<Register />} />
+          </Routes>
 
 
-        <Footer />
+          <Footer />
 
-      </BrowserRouter>
+        </BrowserRouter>
+
+      </Api>
     </Manager>
-    </Api>
 
   )
 }

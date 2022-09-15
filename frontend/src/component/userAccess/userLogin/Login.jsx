@@ -4,11 +4,14 @@ import React from 'react'
 import Input from '../../input/Input'
 import { OutlineButton } from '../../button/Button';
 import PageHeader from '../../page-header/PageHeader';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
+
 
 import moment from "moment";
-import axios from 'axios';
-import Cookis from 'universal-cookie';
+
+import ContextCinemaHallApi from '../../contextFuncion/contectCinemaHallManager/contextApi/Api';
+
 
 moment.updateLocale('en', {
   longDateFormat: {
@@ -26,39 +29,26 @@ moment.updateLocale('en', {
 });
 
 const Login = () => {
-  const cookis = new Cookis();
+
+  let navigate = useNavigate();
+
+  const { getAxiosLogin } = React.useContext(ContextCinemaHallApi);
+
+  const url = 'https://api-proyecto-levelup.herokuapp.com/api/v1/users/login';
+
   const [login, setLogin] = React.useState({ email: '', password: '' });
 
 
   const hanbleChange = (e) => {
     setLogin({ ...login, [e.target.name]: e.target.value });
-    console.log(login);
-  }
-  const url = 'https://api-proyecto-levelup.herokuapp.com/api/v1/users';
-  const getaxios = async () => {
-    await axios.get(url)
-      .then(response => {
-        console.log(response.data);
-        // return (response.data);
-      })
-      // .then(response => {
-      //   if (response > 0) {
-      //     var response = response[0];
-      //     cookis.set('_id', response._id, { path: '/' });
-      //     cookis.set('first_name', response.first_name, { path: '/' });
-      //     cookis.set('last_name', response.last_name, { path: '/' });
-      //     cookis.set('email', response.email, { path: '/' });
-      //     cookis.set('password', response.password, { path: '/' });
-      //     alert(`bienvenido ${response.first_name} ${response.last_name}`)
-      //   } else {
-      //     alert('el usuario o la contraseña son incorrectos ')
-      //   }
-      // })
-      .catch(error => {
-        console.log(error.message);
-      })
+    
   }
 
+
+  const handleLogin = () => {
+    getAxiosLogin(url,login)
+    navigate('/', { replace: true })
+  }
 
   return (
     <>
@@ -90,7 +80,7 @@ const Login = () => {
         </div>
         <div className="container">
           <div className="section mb-3">
-            <OutlineButton onClick={() => getaxios()}>
+            <OutlineButton onClick={() => handleLogin()}>
               Login
             </OutlineButton >
           </div>

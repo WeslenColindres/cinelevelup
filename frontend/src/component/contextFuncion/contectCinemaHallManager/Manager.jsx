@@ -2,9 +2,14 @@ import * as React from "react";
 // import { helpHttp } from "../helpers/helpHttp";
 import seatDB from '../../../database/seatDatabase';
 
+import Cookis from 'universal-cookie';
+
 const ContextCinemaHallManager = React.createContext();
 
 const Manager = ({ children }) => {
+
+  const cookis = new Cookis();
+
   const [seatRequestDataStore, setSeatRequestDataStore] = React.useState(seatDB);
   const [ticketAmountManagement, setTicketAmountManagement] = React.useState(0);
   const [centQuantityController, setCentQuantityController] = React.useState([]);
@@ -15,13 +20,31 @@ const Manager = ({ children }) => {
 
 
   const tickettotal = (price, status) => {
-    if(status) {
+    if (status) {
       setConuntTotal(conuntTotal + (price))
-    }else {
-      setConuntTotal(conuntTotal - (price) )
+    } else {
+      setConuntTotal(conuntTotal - (price))
     }
+
+  }
+
+  const logout = () => {
+    cookis.remove('_id', { path: '/' });
+    cookis.remove('first_name', { path: '/' });
+    cookis.remove('last_name', { path: '/' });
+    cookis.remove('email', { path: '/' });
+    cookis.remove('password', { path: '/' });
+  }
+  const Contextlogin = (response) => {
+
+    cookis.set('_id', response._id, { path: '/' });
+    cookis.set('first_name', response.first_name, { path: '/' });
+    cookis.set('last_name', response.last_name, { path: '/' });
+    cookis.set('email', response.email, { path: '/' });
+    cookis.set('password', response.password, { path: '/' });
     
   }
+
 
   const handleRowSeatSelection = (selectionInformation, seatCode) => {
 
@@ -52,6 +75,8 @@ const Manager = ({ children }) => {
     tickettotal,
     setNameMovie,
     setNameCinema,
+    Contextlogin,
+    logout,
 
   };
 

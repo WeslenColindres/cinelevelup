@@ -1,55 +1,68 @@
-import axios from "axios";
 import * as React from "react";
 
+import axios from "axios";
+
+
+
+import ContextCinemaHallManager from '../Manager';
 
 const ContextCinemaHallApi = React.createContext();
 
 const Api = ({ children }) => {
 
-  const getAxios = (url, id, status) => {
+  const { Contextlogin } = React.useContext(ContextCinemaHallManager);
 
-    if (status) {
-      axios.get(url).then(response => {
-        // setstate(response.data)
-        console.log(response.data);
+  const getAxios = async (url) => {
 
-      }).catch(error => {
-        console.log(error.message);
-      })
+    await axios.get(url).then(response => {
 
-    } else {
-      axios.get(`${url}/${id}`).then(response => {
-        // setstate(response.data)
-        console.log(response.data);
-
-      }).catch(error => {
-        console.log(error.message);
-      })
-    }
-
-  }
-
-  const postAxios = (url) => {
-
-    axios.get(url).then(response => {
-      // setstate(response.data)
       console.log(response.data);
 
     }).catch(error => {
       console.log(error.message);
     })
+  }
+
+  const getAxiosLogin = async (url, login) => {
+    await axios.get(url, { params: { email: login.email, password: login.password } })
+      .then(response => {
+        return (response.data);
+      })
+      .then(response => {
+        if (response.length > 0) {
+          var response = response[0];
+          Contextlogin(response);
+          alert(`bienvenido ${response.first_name} ${response.last_name}`)
+        } else {
+          alert('el usuario o la contraseña son incorrectos ')
+        }
+      })
+      .catch(error => {
+        console.log(error.message);
+      })
+  }
+
+  const postAxios = (url, register) => {
+
+    axios.post(url, register)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
 
   }
 
   const putAxios = (url, id) => {
 
-    axios.get(`${url}/${id}`).then(response => {
-      // setstate(response.data)
-      console.log(response.data);
+    // axios.get(`${url}/${id}`).then(response => {
+    //   // setstate(response.data)
+    //   console.log(response.data);
 
-    }).catch(error => {
-      console.log(error.message);
-    })
+    // }).catch(error => {
+    //   console.log(error.message);
+    // })
 
   }
 
@@ -70,9 +83,11 @@ const Api = ({ children }) => {
 
   const data = {
     getAxios,
+    getAxiosLogin,
     postAxios,
     putAxios,
     deleteAxios,
+
   };
 
   return (
