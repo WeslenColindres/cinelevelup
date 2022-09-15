@@ -17,7 +17,7 @@ const getAllUser = async (req, res) => {
 
 
 const getOneUser = async (req, res) => {
-    if (!req.query.email) {
+    if (!req.query.user_name) {
         res
             .status(400)
             .send({
@@ -28,7 +28,10 @@ const getOneUser = async (req, res) => {
             })
     }
     try {
-        let {  password, user_name }  = req.query;
+        let user_name = req.query.user_name
+     
+        let password = req.query.password
+        
         const user = await User.find({ user_name: user_name, password: password });
         if (!user) {
             res.status(404).json({
